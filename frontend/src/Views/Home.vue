@@ -1,30 +1,18 @@
-<template lang='pug'>
-h1 hallo!
+<template>
+  <div class="home">
+    <img alt="Vue logo" src="../assets/logo.png" />
+    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  </div>
 </template>
 
-<script>
-export default {
-  name: 'Home',
-  props: {
-    msg: String
-  }
-}
-</script>
+<script lang="ts">
+import { Options, Vue } from "vue-class-component";
+import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
+@Options({
+  components: {
+    HelloWorld,
+  },
+})
+export default class Home extends Vue {}
+</script>
